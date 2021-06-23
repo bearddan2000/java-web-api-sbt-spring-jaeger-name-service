@@ -1,0 +1,17 @@
+version: "3.4"
+services:
+  animal-name-service:
+    build: animal-name-service
+
+  scientist-name-service:
+    build: scientist-name-service
+
+  name-generator-service:
+    build: name-generator-service
+    ports:
+      - 81:8080
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.17
+    ports:
+      - 80:16686
